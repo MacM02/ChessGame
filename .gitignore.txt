@@ -1,0 +1,33 @@
+# Build artifacts
+build/
+bin/
+*.o
+*.so
+*.dll
+*.exe
+*.a
+
+# Temporary files
+*.swp
+*~
+*.tmp
+
+# IDE-specific files
+.vscode/
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+
+# Compiler-specific files
+*.pch
+*.idb
+*.pdb
+*.ilk
+*.ncb
+*.aps
+*.bsc
+*.sbr
+
+# CMake files
+CMakeLists.txt.user
