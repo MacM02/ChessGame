@@ -1,4 +1,5 @@
-﻿  Board.cpp
-  Pieces.cpp
+﻿  bishop.cpp
+  queen.cpp
+  rook.cpp
   Generating Code...
-  ChessGame.vcxproj -> C:\Users\muirm\source\repos\ChessGame\x64\Debug\ChessGame.exe
+  ChessGame.vcxproj -> C:\Users\muirm\source\repos\ChessGame2\x64\Debug\ChessGame.exe
