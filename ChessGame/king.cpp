@@ -1,17 +1,15 @@
-#pragma once
 #include "piece.cpp"
-#include <cmath>
 
 /// <summary>
-/// This class represents a Bishop on the chess board and inherits methods its abstract class 'Piece'.
+/// This class represents a King on the chess board and inherits methods its abstract class 'Piece'.
 /// </summary>
-class Bishop : public Piece {
+class King : public Piece {
 	/// <summary>
 	/// Piece constructor.
 	/// </summary>
 	/// <param name="name"> Name of the piece. </param>
 	/// <param name="currSquare"> The piece's current square as a pair. </param>
-	Bishop(std::string pieceName, std::pair<int, int> currSquare)
+	King(std::string pieceName, std::pair<int, int> currSquare)
 		: Piece(pieceName, currSquare) {};
 
 	/// <summary>
@@ -26,8 +24,11 @@ class Bishop : public Piece {
 			xTravel = abs(destSquare.first - currSquare.first);
 			yTravel = abs(destSquare.second - currSquare.second);
 
-			// true if both the x and y travel are equal to each other and the travel distance is > 0
-			return (xTravel == yTravel) && ((xTravel + yTravel) != 0);
+			// FIXME: can simplify this I'm sure...
+			return ((xTravel == 1) && (yTravel == 0)) 
+				|| ((yTravel == 1) && (xTravel == 0)) 
+				|| ((xTravel == 1) && (yTravel == 1));
 		}
+		return false;
 	};
 };

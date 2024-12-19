@@ -45,7 +45,6 @@ public:
 	/// <returns> True if the piece can move in that direction and false if not. </returns>
 	virtual bool isValidMove(std::pair<int, int> destSquare) const = 0;
 
-
 	/// <summary>
 	/// Checks if a square is valid on the board.
 	/// </summary>

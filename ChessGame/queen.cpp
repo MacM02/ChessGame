@@ -1,6 +1,4 @@
 #include "piece.cpp"
-#include "rook.cpp"
-#include "bishop.cpp"
 
 /// <summary>
 /// This class represents a Queen on the chess board and inherits methods its abstract class 'Piece'.
