@@ -1,7 +1,7 @@
 // board.cpp
 
 #include <iostream>
-#include "Pieces.cpp"
+#include "piece.cpp"
 
 class Board {
 protected:

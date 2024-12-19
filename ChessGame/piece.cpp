@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 
 /// <summary>
@@ -44,14 +45,13 @@ public:
 	/// <returns> True if the piece can move in that direction and false if not. </returns>
 	virtual bool isValidMove(std::pair<int, int> destSquare) const = 0;
 
-private:
 
 	/// <summary>
 	/// Checks if a square is valid on the board.
 	/// </summary>
 	/// <param name="newTile"> The new square that the piece wants to move to. </param>
 	/// <returns> True if it is within the constraints of the board and false otherwise. </returns>
-	bool isValidSquare(std::pair<int, int> newSquare) {
+	bool isValidSquare(std::pair<int, int> newSquare) const {
 		return (newSquare.first >= 0 && newSquare.first < 8) && (newSquare.second >= 0 && newSquare.second < 8);
 	}
 };

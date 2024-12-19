@@ -1,3 +1,4 @@
+#pragma once
 #include "piece.cpp"
 #include <cmath>
 
@@ -18,19 +19,16 @@ class Bishop : public Piece {
 	/// </summary>
 	/// <returns> True if the piece can move in that direction and false if not. </returns>
 	virtual bool Piece::isValidMove(std::pair<int, int> destSquare) const override {
-		if ((destSquare.first > 7 || destSquare.first < 0) || (destSquare.second > 7 || destSquare.second < 0)) {
-			return false;
+
+		int xTravel;
+		int yTravel;
+
+		if (isValidSquare(destSquare)) {
+			xTravel = abs(destSquare.first - currSquare.first);
+			yTravel = abs(destSquare.second - currSquare.second);
+
+			// true if both the x and y travel are equal to each other and the travel distance is > 0
+			return (xTravel == yTravel) && ((xTravel + yTravel) != 0);
 		}
-
-		int xTravel = abs(destSquare.first - currSquare.first);
-		int yTravel = abs(destSquare.second - currSquare.second);
-
-		// not valid if the bishop has not moved at all
-		if (xTravel == 0 && yTravel == 0) {
-			return false;
-		}
-
-		// true if both the x and y travel are equal to each other, creating a diagonal line
-		return xTravel == yTravel;
 	};
 };

@@ -1,5 +1,4 @@
 #include "piece.cpp"
-#include <cmath>
 
 /// <summary>
 /// This class represents a Knight on the chess board and inherits methods its abstract class 'Piece'.
@@ -18,11 +17,9 @@ class Knight : public Piece {
 	/// </summary>
 	/// <returns> True if the piece can move in that direction and false if not. </returns>
 	virtual bool Piece::isValidMove(std::pair<int, int> destSquare) const override {
-		if ((destSquare.first > 7 || destSquare.first < 0) || (destSquare.second > 7 || destSquare.second < 0)) {
-			return false;
+		if (isValidSquare(destSquare)) {
+
 		}
-		
-
-
+		return false;
 	};
 };

@@ -1,3 +1,4 @@
+#pragma once
 #include "piece.cpp"
 
 /// <summary>
@@ -17,11 +18,12 @@ class Rook : public Piece {
 	/// </summary>
 	/// <returns> True if the piece can move in that direction and false if not. </returns>
 	virtual bool Piece::isValidMove(std::pair<int, int> destSquare) const override {
-		if ((destSquare.first > 7 || destSquare.first < 0) || (destSquare.second > 7 || destSquare.second < 0)) {
-			return false;
+		if (isValidSquare(destSquare)) {
+
+			// returns true if exactly 1 on the conditions is true and false otherwise
+			return (currSquare.second == destSquare.second) ^ (currSquare.first == currSquare.first);
 		}
 
-		// returns true if exactly 1 on the conditions is true and false otherwise
-		return (currSquare.second == destSquare.second) ^ (currSquare.first == currSquare.first);
+		return false;
 	};
 };
