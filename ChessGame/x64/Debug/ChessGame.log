@@ -1,4 +1,7 @@
 ﻿  bishop.cpp
+  king.cpp
+  knight.cpp
+  pawn.cpp
   queen.cpp
   rook.cpp
   Generating Code...

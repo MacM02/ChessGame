@@ -39,6 +39,9 @@
     <ClCompile Include="king.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="pawn.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />

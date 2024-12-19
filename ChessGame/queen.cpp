@@ -10,8 +10,8 @@ class Queen : public Piece {
 	/// </summary>
 	/// <param name="name"> Name of the piece. </param>
 	/// <param name="currSquare"> The piece's current square as a pair. </param>
-	Queen(std::string pieceName, std::pair<int, int> currSquare)
-		: Piece(pieceName, currSquare) {};
+	Queen(std::string pieceName, std::string pieceColor, std::pair<int, int> currSquare)
+		: Piece(pieceName, pieceColor, currSquare) {};
 
 	/// <summary>
 	/// Checks the validity of the piece's move.

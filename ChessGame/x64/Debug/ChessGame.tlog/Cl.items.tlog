@@ -1,7 +1,9 @@
 C:\Users\muirm\source\repos\ChessGame2\ChessGame\bishop.cpp;C:\Users\muirm\source\repos\ChessGame2\ChessGame\x64\Debug\bishop.obj
 C:\Users\muirm\source\repos\ChessGame2\ChessGame\board.cpp;C:\Users\muirm\source\repos\ChessGame2\ChessGame\x64\Debug\board.obj
 C:\Users\muirm\source\repos\ChessGame2\ChessGame\chess_game.cpp;C:\Users\muirm\source\repos\ChessGame2\ChessGame\x64\Debug\chess_game.obj
+C:\Users\muirm\source\repos\ChessGame2\ChessGame\king.cpp;C:\Users\muirm\source\repos\ChessGame2\ChessGame\x64\Debug\king.obj
 C:\Users\muirm\source\repos\ChessGame2\ChessGame\knight.cpp;C:\Users\muirm\source\repos\ChessGame2\ChessGame\x64\Debug\knight.obj
+C:\Users\muirm\source\repos\ChessGame2\ChessGame\pawn.cpp;C:\Users\muirm\source\repos\ChessGame2\ChessGame\x64\Debug\pawn.obj
 C:\Users\muirm\source\repos\ChessGame2\ChessGame\piece.cpp;C:\Users\muirm\source\repos\ChessGame2\ChessGame\x64\Debug\piece.obj
 C:\Users\muirm\source\repos\ChessGame2\ChessGame\queen.cpp;C:\Users\muirm\source\repos\ChessGame2\ChessGame\x64\Debug\queen.obj
 C:\Users\muirm\source\repos\ChessGame2\ChessGame\rook.cpp;C:\Users\muirm\source\repos\ChessGame2\ChessGame\x64\Debug\rook.obj

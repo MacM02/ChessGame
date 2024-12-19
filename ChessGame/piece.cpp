@@ -12,6 +12,12 @@ protected:
 	std::string name;
 
 	/// <summary>
+	/// The color of the piece.
+	///		- Either white or black.
+	/// </summary>
+	std::string color;
+
+	/// <summary>
 	/// Represents a piece's current status on the board.
 	/// </summary>
 	bool inPlay;
@@ -30,8 +36,8 @@ public:
 	/// </summary>
 	/// <param name="name"> Name of the piece. </param>
 	/// <param name="currSquare"> The piece's current square as a pair. </param>
-	Piece(std::string name, std::pair<int, int> currSquare)
-			: name(name), currSquare(currSquare), inPlay(true) {}
+	Piece(std::string name, std::string color, std::pair<int, int> currSquare)
+			: name(name), color(color), currSquare(currSquare), inPlay(true) {}
 
 	/// <summary>
 	/// Virtual destructor.
