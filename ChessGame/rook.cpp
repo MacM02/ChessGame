@@ -5,6 +5,7 @@
 /// This class represents a Rook on the chess board and inherits methods its abstract class 'Piece'.
 /// </summary>
 class Rook : public Piece {
+public:
 	/// <summary>
 	/// Piece constructor.
 	/// </summary>

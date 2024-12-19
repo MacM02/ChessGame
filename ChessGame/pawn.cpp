@@ -5,7 +5,7 @@
 /// This class represents a Pawn on the chess board and inherits methods its abstract class 'Piece'.
 /// </summary>
 class Pawn : public Piece {
-
+public:
 	/// <summary>
 	/// Piece constructor.
 	/// </summary>

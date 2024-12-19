@@ -4,6 +4,7 @@
 /// This class represents a King on the chess board and inherits methods its abstract class 'Piece'.
 /// </summary>
 class King : public Piece {
+public:
 	/// <summary>
 	/// Piece constructor.
 	/// </summary>

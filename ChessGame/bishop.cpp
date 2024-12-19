@@ -6,6 +6,7 @@
 /// This class represents a Bishop on the chess board and inherits methods its abstract class 'Piece'.
 /// </summary>
 class Bishop : public Piece {
+public:
 	/// <summary>
 	/// Piece constructor.
 	/// </summary>
