@@ -20,20 +20,33 @@ class Pawn : public Piece {
 	/// <returns> True if the piece can move in that direction and false if not. </returns>
 	virtual bool Piece::isValidMove(std::pair<int, int> destSquare) const override {
 
-		// FIXME: if (pawn is on starting square) { allow two steps forward };
-		// starting row for white = 1
-		// starting row for black = 6
+		int xTravel;
+		int yTravel;
+
 		if (isValidSquare(destSquare)) {
+			xTravel = destSquare.first - currSquare.first;
+			yTravel = destSquare.second - destSquare.second;
 
 			// if the pawn is white
-			if (this->color == "white") {
-				return ((destSquare.first - currSquare.first) == 1) && (destSquare.second == currSquare.second);
+			if (this->color == "white" && this->currSquare.first == 1) {
+				return (xTravel == 1) && (yTravel == 0)
+					|| (xTravel == 2) && (yTravel == 0);
+			}
+			else if (this->color == "white") {
+				return (xTravel == 1) && (yTravel == 0);
 			}
 
 			// if the pawn is black
-			return ((destSquare.first - currSquare.first) == -1) && (destSquare.second == currSquare.second);
+			if (this->color == "black" && this->currSquare.first == 6) {
+				return (xTravel == -1) && (yTravel == 0)
+					|| (xTravel == -2) && (yTravel == 0);
+			}
+			else if (this->color == "black") {
+				return (xTravel == -1) && (yTravel == 0);
+			}
 		}
-
 		return false;
 	};
+
+	bool 
 };
