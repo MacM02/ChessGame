@@ -59,4 +59,12 @@ public:
 	bool isValidSquare(std::pair<int, int> newSquare) const {
 		return (newSquare.first >= 0 && newSquare.first < 8) && (newSquare.second >= 0 && newSquare.second < 8);
 	}
+
+	/// <summary>
+	/// Gets the piece's current square.
+	/// </summary>
+	/// <returns> A pair of ints as the current square [row, col].</returns>
+	std::pair<int, int> getCurrSquare() const {
+		return currSquare;
+	}
 };
