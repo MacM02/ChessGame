@@ -31,3 +31,6 @@ bin/
 
 # CMake files
 CMakeLists.txt.user
+
+.vs/
+FileContentIndex
