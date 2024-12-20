@@ -1,30 +1,19 @@
-#pragma once
-#include "piece.cpp"
+// rook.cpp
+#include "rook.h"
 
-/// <summary>
-/// This class represents a Rook on the chess board and inherits methods its abstract class 'Piece'.
-/// </summary>
-class Rook : public Piece {
-public:
-	/// <summary>
-	/// Piece constructor.
-	/// </summary>
-	/// <param name="name"> Name of the piece. </param>
-	/// <param name="currSquare"> The piece's current square as a pair. </param>
-	Rook(std::string pieceName, std::string pieceColor, std::pair<int, int> currSquare)
-		: Piece(pieceName, pieceColor, currSquare) {};
+namespace chess {
+	
+	// Rook constructor 
+	Rook::Rook(std::string pieceColor, std::pair<int, int> currSquare)
+		: Piece("rook", pieceColor, currSquare) {};
 
-	/// <summary>
-	/// Checks the validity of the piece's move.
-	/// </summary>
-	/// <returns> True if the piece can move in that direction and false if not. </returns>
-	virtual bool Piece::isValidMove(std::pair<int, int> destSquare) const override {
+	// checks whether the destination square is valid for this piece
+	bool Rook::isValidMove(std::pair<int, int> destSquare) const {
 		if (isValidSquare(destSquare)) {
 
 			// returns true if exactly 1 on the conditions is true and false otherwise
 			return (currSquare.second == destSquare.second) ^ (currSquare.first == currSquare.first);
 		}
-
 		return false;
 	};
-};
+}
