@@ -16,15 +16,17 @@ Copyright: [Mack Muir-Jeffryes]
 	Our board will be made up of a two-dimensional array that holds Pieces. As per common chess fashion, the board will be
 	an (8x8) layout.
 
-# Estimated/Worked       Note
+# Estimated/Worked       Notes
 
 	20 hrs / X							
-
 	
 # Times Worked on
 	
 	# Implementing Piece functionality 
 	12/17-18/24
+
+	# Added all the header files... a long process.
+	12/20/24
 
 # Notes
 
@@ -32,8 +34,8 @@ Copyright: [Mack Muir-Jeffryes]
 
 	Currently believe:
 
-	Models - The pieces/board logic that we will use when instructing the GUI to draw according to object state.
+	Models - The pieces that we will use when instructing the GUI to draw according to object state.
 
-	View - GUI class?
+	View - A GUI class that may be our chess_game?
 
-	Controller - ?
+	Controller - Probably our board.cpp file? As it holds all the current board data and processes movement logic, etc.
