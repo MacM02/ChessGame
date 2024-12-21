@@ -3,6 +3,11 @@
 #include "board.h"
 #include "piece.h"
 #include "rook.h"
+#include "knight.h"
+#include "bishop.h"
+#include "king.h"
+#include "queen.h"
+#include "pawn.h"
 
 namespace chess {
 
@@ -11,9 +16,6 @@ namespace chess {
 	/// </summary>
 	Board::Board() {
 
-		// initializing the board tiles to hold null pointers.
-		// FIXME: add if statements for all pieces!
-		// do I need to fill it with nullptr's initially? Or is this alright?
 		for (int row = 0; row < 8; row++) {
 			for (int col = 0; col < 8; col++) {
 
@@ -24,6 +26,51 @@ namespace chess {
 				else if ((row == 7 && col == 0) || (row == 7 && col == 7)) {
 					placePiece(std::make_unique<Rook>("black", std::pair<int, int>(row, col)), row, col);
 				}
+				
+				// inserting knights
+				else if ((row == 0 && col == 1) || (row == 0 && col == 6)) {
+					placePiece(std::make_unique<Knight>("white", std::pair<int, int>(row, col)), row, col);
+				}
+				else if ((row == 7 && col == 1) || (row == 7 && col == 6)) {
+					placePiece(std::make_unique<Knight>("black", std::pair<int, int>(row, col)), row, col);
+				}
+
+				// inserting bishops
+				else if ((row == 0 && col == 2) || (row == 0 && col == 5)) {
+					placePiece(std::make_unique<Bishop>("white", std::pair<int, int>(row, col)), row, col);
+				}
+				else if ((row == 7 && col == 2) || (row == 7 && col == 5)) {
+					placePiece(std::make_unique<Bishop>("black", std::pair<int, int>(row, col)), row, col);
+				}
+
+				// inserting kings
+				else if ((row == 0) && (col == 3)) {
+					placePiece(std::make_unique<King>("white", std::pair<int, int>(row, col)), row, col);
+				}
+				else if ((row == 7) && (col == 3)) {
+					placePiece(std::make_unique<King>("black", std::pair<int, int>(row, col)), row, col);
+				}
+
+				// inserting queens
+				else if ((row == 0) && (col == 4)) {
+					placePiece(std::make_unique<Queen>("white", std::pair<int, int>(row, col)), row, col);
+				}
+				else if ((row == 7) && (col == 4)) {
+					placePiece(std::make_unique<Queen>("black", std::pair<int, int>(row, col)), row, col);
+				}
+
+				// inserting pawn's
+				else if (row == 1) {
+					placePiece(std::make_unique<Pawn>("white", std::pair<int, int>(row, col)), row, col);
+				}
+				else if (row == 6) {
+					placePiece(std::make_unique<Pawn>("black", std::pair<int, int>(row, col)), row, col);
+				}
+
+				// otherwise fill the board with null pointers
+				else {
+					this->board[row][col] = nullptr;
+				}
 			}
 		}
 	}
@@ -33,6 +80,7 @@ namespace chess {
 	/// </summary>
 	void Board::move() {
 		// FIXME: not implemented
+		// do I even need this? Place Piece seems to have it covered?...
 	}
 
 	/// <summary>
@@ -44,5 +92,23 @@ namespace chess {
 
 		// inserting the pointer into the board array
 		this->board[row][col] = std::move(piece);
+	}
+
+	/// <summary>
+	/// Called when an attacking piece takes a defending piece on the board.
+	///		-> Replaces defending piece with the attacking piece on the board and sets
+	///		   old attacker's square to null.
+	/// </summary>
+	/// <param name="attacker"> The attacking piece. </param>
+	/// <param name="defender"> The defending piece. </param>
+	void Board::take(std::unique_ptr<Piece> attacker, std::unique_ptr<Piece> defender) {
+
+		// save attacker's position to set to null
+		std::pair<int, int> attackerPosition = (*attacker).getCurrSquare();
+		std::pair<int, int> defenderPosition = (*defender).getCurrSquare();
+
+		placePiece(std::move(attacker), defenderPosition.first, defenderPosition.second);
+
+		board[attackerPosition.first][attackerPosition.second] = nullptr;
 	}
 }
