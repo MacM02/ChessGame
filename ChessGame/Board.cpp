@@ -1,23 +1,15 @@
 // board.cpp
-
 #include <iostream>
-#include "piece.cpp"
-#include "rook.cpp"
+#include "board.h"
+#include "piece.h"
+#include "rook.h"
 
-class Board {
-protected:
-	/// <summary>
-	/// The board that we will play on.
-	///		- Represented as a two-dimensional array.
-	///		- Playing with the convention that white begins 
-	/// </summary>
-	std::unique_ptr<Piece> board[8][8];
+namespace chess {
 
-public:
 	/// <summary>
 	/// Board contructor that initializes an empty board.
 	/// </summary>
-	Board() {
+	Board::Board() {
 
 		// initializing the board tiles to hold null pointers.
 		// FIXME: add if statements for all pieces!
@@ -27,10 +19,10 @@ public:
 
 				// inserting rooks
 				if ((row == 0 && col == 0) || (row == 0 && col == 7)) {
-					placePiece(std::make_unique<Rook>("rook", "white", std::pair<int, int>(row, col)));
+					placePiece(std::make_unique<Rook>("white", std::pair<int, int>(row, col)), row, col);
 				}
 				else if ((row == 7 && col == 0) || (row == 7 && col == 7)) {
-					placePiece(std::make_unique<Rook>("rook", "black", std::pair<int, int>(row, col)));
+					placePiece(std::make_unique<Rook>("black", std::pair<int, int>(row, col)), row, col);
 				}
 			}
 		}
@@ -39,24 +31,18 @@ public:
 	/// <summary>
 	/// Allows a piece to move across the board.
 	/// </summary>
-	void move() {
-		
+	void Board::move() {
+		// FIXME: not implemented
 	}
-
-private:
 
 	/// <summary>
 	/// Places a piece on the board.
 	/// </summary>
 	/// <param name="row"> The row that we will place the piece on. </param>
 	/// <param name="col"> The column that we will place the piece on. </param>
-	void placePiece(std::unique_ptr<Piece> piece) {
-
-		// extracting the current square of the piece as a pair
-		std::pair<int, int> currSquare = piece->getCurrSquare();
+	void Board::placePiece(std::unique_ptr<Piece> piece, int row, int col) {
 
 		// inserting the pointer into the board array
-		this->board[currSquare.first][currSquare.second] = std::move(piece);
+		this->board[row][col] = std::move(piece);
 	}
-};
-
+}

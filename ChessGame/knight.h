@@ -1,10 +1,10 @@
-// king.h
+// knight.h
 #pragma once
 #include <iostream>
 #include "piece.h"
 
 namespace chess {
-	class King : public Piece {
+	class Knight : public Piece {
 
 	public:
 		/// <summary>
@@ -12,7 +12,7 @@ namespace chess {
 		/// </summary>
 		/// <param name="name"> Name of the piece. </param>
 		/// <param name="currSquare"> The piece's current square as a pair. </param>
-		King(std::string pieceColor, std::pair<int, int> currSquare);
+		Knight(std::string pieceColor, std::pair<int, int> currSquare);
 
 		/// <summary>
 		/// Checks the validity of the piece's move.

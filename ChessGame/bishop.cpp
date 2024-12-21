@@ -1,5 +1,4 @@
 // bishop.cpp
-#include "piece.h"
 #include "bishop.h"
 #include <cmath>
 

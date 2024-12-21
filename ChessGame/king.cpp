@@ -5,7 +5,7 @@
 namespace chess {
 	
 	King::King( std::string pieceColor, std::pair<int, int> currSquare)
-		: Piece("king", pieceColor, currSquare) {};
+		: Piece("king", std::move(pieceColor), currSquare) {};
 
 	bool King::isValidMove(std::pair<int, int> destSquare) const {
 		int xTravel;

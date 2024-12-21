@@ -19,7 +19,6 @@ namespace chess {
 		/// </summary>
 		/// <returns> True if the piece can move in that direction and false if not. </returns>
 		bool isValidMove(std::pair<int, int> destSquare) const ;
-
 	};
 }
 

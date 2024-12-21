@@ -1,24 +1,12 @@
 #pragma once
-#include "piece.cpp"
+#include "pawn.h"
 
-/// <summary>
-/// This class represents a Pawn on the chess board and inherits methods its abstract class 'Piece'.
-/// </summary>
-class Pawn : public Piece {
-public:
-	/// <summary>
-	/// Piece constructor.
-	/// </summary>
-	/// <param name="name"> Name of the piece. </param>
-	/// <param name="currSquare"> The piece's current square as a pair. </param>
-	Pawn(std::string pieceName, std::string pieceColor, std::pair<int, int> currSquare)
-		: Piece(pieceName, pieceColor, currSquare) {};
+namespace chess {
 
-	/// <summary>
-	/// Checks the validity of the piece's move.
-	/// </summary>
-	/// <returns> True if the piece can move in that direction and false if not. </returns>
-	virtual bool Piece::isValidMove(std::pair<int, int> destSquare) const override {
+	Pawn::Pawn(std::string pieceColor, std::pair<int, int> currSquare)
+		: Piece("pawn", std::move(pieceColor), currSquare) {};
+
+	bool Pawn::isValidMove(std::pair<int, int> destSquare) const {
 
 		int xTravel;
 		int yTravel;
@@ -36,7 +24,7 @@ public:
 
 			// if pawn is white and has moved this game
 			else if (this->color == "white") {
-				return (xTravel == 1) && (yTravel == 0) 
+				return (xTravel == 1) && (yTravel == 0)
 					|| ((xTravel == yTravel) && ((xTravel == 1) && (abs(yTravel) == 1)));
 			}
 
@@ -49,10 +37,10 @@ public:
 
 			// if pawn is black and has moved this game
 			else if (this->color == "black") {
-				return (xTravel == -1) && (yTravel == 0) 
+				return (xTravel == -1) && (yTravel == 0)
 					|| ((xTravel == yTravel) && ((xTravel == -1) && (abs(yTravel) == 1)));
 			}
 		}
 		return false;
 	};
-};
+}
